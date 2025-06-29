@@ -78,7 +78,7 @@ pipeline {
                     sh '''
                     docker stop ekart-app || true
                     docker rm ekart-app || true
-                    docker run -d --name ekart-app -p 8080:8080 $DOCKER_IMAGE
+                    docker run -d --name ekart-app -p 8070:8070 $DOCKER_IMAGE
                     '''
                 }
             }
