@@ -6,7 +6,7 @@ pipeline {
     }
 
     tools {
-        maven 'Maven3'           // Use your Maven version (configure this in Jenkins tools)
+        maven 'maven3'           // Use your Maven version (configure this in Jenkins tools)
         jdk 'Java21'             // Use your installed JDK (configure this in Jenkins tools)
     }
 
@@ -32,6 +32,7 @@ pipeline {
                 withSonarQubeEnv('MySonarQubeServer') {  // Replace with your SonarQube server name in Jenkins
                     sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
                         -Dsoanr.sonnar.url=https://   \
+                        -Dsonar.login=
                         -Dsonar.projectKey=ekart \
                         -Dsonar.sources=. \
                         -Dsonar.java.binaries=target"
